@@ -1,0 +1,115 @@
+page{
+  padding-bottom:100rpx;
+}
+.tips{
+  padding-top:30rpx;
+  font-size:30rpx;
+  padding-left:40rpx;
+  background:#eee;
+  padding-bottom:30rpx;
+  padding-right:30rpx;
+}
+.tips text{
+  display: block;
+}
+.house{
+  margin-top:60rpx;
+}
+.house_item{
+  width:25%;
+  box-sizing: border-box;
+  border:5rpx solid #fff;
+  border-radius:10rpx;
+  height:187.5rpx;
+  float: left;
+  text-align: center;
+  font-size:36rpx;
+  line-height: 187.5rpx;
+}
+
+.content_h{
+  width:100%;
+}
+.content_h view{
+  width:100%;
+}
+.state_h{
+  height:80rpx;
+  line-height: 80rpx;
+}
+.state_item{
+  float:left;
+}
+.item_block{
+  height:60rpx;
+  width:60rpx;
+  margin:10rpx;
+  float:left;
+}
+.state_item text{
+  float: left;
+  font-size:32rpx;
+}
+.fast{
+  line-height: 80rpx;
+  font-size:28rpx;
+  padding-left:30rpx;
+}
+.fast_click{
+  color:blueviolet;
+  float:right;
+  margin-right:60rpx;
+  margin-top:10rpx;
+}
+
+.nav{
+  display: flex;
+  position:fixed;
+  bottom:0;
+  left:0;
+  width:100%;
+  background:#eee;
+  font-size:28rpx;
+  height:80rpx;
+  line-height: 80rpx;
+  text-align: center;
+}
+.nav_item{
+  flex:1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.color1{
+  background:greenyellow;
+}
+.color2{
+  background: red;
+}
+.color3{
+  background: orange;
+}
+.color4{
+  background:blueviolet;
+}
+

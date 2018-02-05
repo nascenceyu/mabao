@@ -1,0 +1,91 @@
+<view class='h_name'>
+  <view class='tips'>
+    <view>
+      <text>累计进客:{{msg.order_count}}间，</text>
+      <text>累计客离:{{msg.done_count}}间</text>
+    </view>
+    <view class='state_h clearfix'>
+      <view class='state_item'>
+        <view class='item_block color2'></view>
+        <text>预定:{{msg.booking_count}}间</text>
+      </view>
+      <view class='state_item'>
+        <view class='item_block color3'></view>
+        <text>进客:{{msg.curr_order_count}}间</text>
+      </view>
+      <view class='state_item'>
+        <view class='item_block color1'></view>
+        <text>空房:{{msg.empty_count}}间</text>
+      </view>
+    </view>
+  </view>
+
+  <view>
+    <text>点击空房间，轻松预约</text>
+    <text class='seeMore' bindtap='toHistory'>查看订单详情</text>
+  </view>
+  <view class='hidden'>
+    <text>先到先得模式进行中</text>
+  </view>
+
+  <view class='state_h clearfix'>
+    <view class='state_item'>
+      <view class='item_block color1'></view>
+      <text>空</text>
+    </view>
+    <view class='state_item'>
+      <view class='item_block color2'></view>
+      <text>已预定</text>
+    </view>
+    <view class='state_item'>
+      <view class='item_block color3'></view>
+      <text>已进客</text>
+    </view>
+    <view class='state_item'>
+      <view class='item_block color4'></view>
+      <text>我的房间</text>
+    </view>
+    <view class='state_item'>
+      <view class='item_block color5'></view>
+      <text>先到先得</text>
+    </view>
+
+    <view class='see_queue state_item'>
+      <button bindtap='toQueue' size='mini'>查看排队信息</button>
+    </view>
+  </view>
+
+  <view class='fast hidden'>
+    <text>停止妈咪预订，点击</text>
+    <text class='fast_click' bindtap='fastToFast'>先到先得</text>
+  </view>
+
+  <view class='house clearfix'>
+    <block wx:for="{{houseArr}}"  wx:key='index'>
+        <view class='house_item color1 {{item.room_status == 1 ? "color2":""}} {{item.room_status == 2? "color3":""}} {{item.room_status == 3? "color5":""}}  {{item.is_my == 1 ? "color4":""}} ' data-id='{{item.room_id}}' data-state='{{item.room_status}}' data-mami='{{item.is_my}}' bindtap='changeState'>
+          <view class='content_h'>
+            <view class='ellipse1 room_name'>{{item.room_name}}</view>
+            <view wx:if='{{item.booking_member_id != "0"}}' class='apt ellipse1'>预定:{{mamiList[item.booking_member_id].name}}</view>
+            <view wx:if='{{item.order_member_id != "0"}}' class='come ellipse1'>进客:{{mamiList[item.order_member_id].name}}</view>
+          </view>
+        </view>
+      </block>
+  </view>
+
+  <view class='nav hidden'>
+    <view class='nav_item' bindtap='toResetName'>
+      <text>修改房间名</text>
+    </view>
+    <view class='nav_item' bindtap='toResetNumber'>
+      <text>修改房间数量</text>
+    </view>
+    <view class='nav_item' bindtap='toMami'>
+      <text>妈咪管理</text>
+    </view>
+    <view class='nav_item' bindtap='toHistory'>
+      <text>订单明细</text>
+    </view>
+  </view>
+
+  <button bindtap='getQueueNumber' type='primary' class='getNumber' disabled='{{lock==1}}'>领号排队</button>
+</view>
